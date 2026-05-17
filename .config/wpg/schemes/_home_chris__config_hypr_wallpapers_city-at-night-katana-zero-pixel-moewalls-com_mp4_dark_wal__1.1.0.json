@@ -1,0 +1,27 @@
+{
+    "wallpaper": "/home/chris/.config/hypr/wallpapers/city-at-night-katana-zero-pixel-moewalls-com.mp4",
+    "alpha": "100",
+    "special": {
+        "background": "#0B040E",
+        "foreground": "#a2aac0",
+        "cursor": "#a2aac0"
+    },
+    "colors": {
+        "color0": "#0B040E",
+        "color1": "#2E2C6F",
+        "color2": "#48346C",
+        "color3": "#3A4A70",
+        "color4": "#4B4C73",
+        "color5": "#3C3683",
+        "color6": "#4B3184",
+        "color7": "#a2aac0",
+        "color8": "#717686",
+        "color9": "#2E2C6F",
+        "color10": "#48346C",
+        "color11": "#3A4A70",
+        "color12": "#4B4C73",
+        "color13": "#3C3683",
+        "color14": "#4B3184",
+        "color15": "#a2aac0"
+    }
+}

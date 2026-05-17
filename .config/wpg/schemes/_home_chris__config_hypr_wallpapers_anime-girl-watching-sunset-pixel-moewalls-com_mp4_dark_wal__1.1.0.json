@@ -1,0 +1,27 @@
+{
+    "wallpaper": "/home/chris/.config/hypr/wallpapers/anime-girl-watching-sunset-pixel-moewalls-com.mp4",
+    "alpha": "100",
+    "special": {
+        "background": "#12050a",
+        "foreground": "#91a4b9",
+        "cursor": "#91a4b9"
+    },
+    "colors": {
+        "color0": "#12050a",
+        "color1": "#4B2C4E",
+        "color2": "#712A52",
+        "color3": "#633160",
+        "color4": "#19486D",
+        "color5": "#A32257",
+        "color6": "#DA0942",
+        "color7": "#91a4b9",
+        "color8": "#657281",
+        "color9": "#4B2C4E",
+        "color10": "#712A52",
+        "color11": "#633160",
+        "color12": "#19486D",
+        "color13": "#A32257",
+        "color14": "#DA0942",
+        "color15": "#91a4b9"
+    }
+}

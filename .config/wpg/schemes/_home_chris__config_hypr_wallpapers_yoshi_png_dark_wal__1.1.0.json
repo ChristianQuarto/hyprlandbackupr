@@ -1,0 +1,27 @@
+{
+    "wallpaper": "/home/chris/.config/hypr/wallpapers/yoshi.png",
+    "alpha": "100",
+    "special": {
+        "background": "#161816",
+        "foreground": "#89e5d1",
+        "cursor": "#89e5d1"
+    },
+    "colors": {
+        "color0": "#161816",
+        "color1": "#ECB01D",
+        "color2": "#FEAC3E",
+        "color3": "#FEE938",
+        "color4": "#F2BA4E",
+        "color5": "#08BAA0",
+        "color6": "#02C1A7",
+        "color7": "#89e5d1",
+        "color8": "#5fa092",
+        "color9": "#ECB01D",
+        "color10": "#FEAC3E",
+        "color11": "#FEE938",
+        "color12": "#F2BA4E",
+        "color13": "#08BAA0",
+        "color14": "#02C1A7",
+        "color15": "#89e5d1"
+    }
+}

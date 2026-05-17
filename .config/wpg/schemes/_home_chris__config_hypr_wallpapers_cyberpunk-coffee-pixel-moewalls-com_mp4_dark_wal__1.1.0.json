@@ -1,0 +1,27 @@
+{
+    "wallpaper": "/home/chris/.config/hypr/wallpapers/cyberpunk-coffee-pixel-moewalls-com.mp4",
+    "alpha": "100",
+    "special": {
+        "background": "#0d0e1c",
+        "foreground": "#a9c1c8",
+        "cursor": "#a9c1c8"
+    },
+    "colors": {
+        "color0": "#0d0e1c",
+        "color1": "#30536B",
+        "color2": "#61686E",
+        "color3": "#9C6552",
+        "color4": "#E2A75E",
+        "color5": "#3A7386",
+        "color6": "#537989",
+        "color7": "#a9c1c8",
+        "color8": "#76878c",
+        "color9": "#30536B",
+        "color10": "#61686E",
+        "color11": "#9C6552",
+        "color12": "#E2A75E",
+        "color13": "#3A7386",
+        "color14": "#537989",
+        "color15": "#a9c1c8"
+    }
+}

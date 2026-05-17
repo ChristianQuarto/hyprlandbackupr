@@ -1,0 +1,27 @@
+{
+    "wallpaper": "/home/chris/.config/hypr/wallpapers/playstation-4-pixel-moewalls-com.mp4",
+    "alpha": "100",
+    "special": {
+        "background": "#000000",
+        "foreground": "#bfc5cc",
+        "cursor": "#bfc5cc"
+    },
+    "colors": {
+        "color0": "#000000",
+        "color1": "#49566A",
+        "color2": "#4B6675",
+        "color3": "#858673",
+        "color4": "#3D7188",
+        "color5": "#647488",
+        "color6": "#6F929F",
+        "color7": "#bfc5cc",
+        "color8": "#85898e",
+        "color9": "#49566A",
+        "color10": "#4B6675",
+        "color11": "#858673",
+        "color12": "#3D7188",
+        "color13": "#647488",
+        "color14": "#6F929F",
+        "color15": "#bfc5cc"
+    }
+}

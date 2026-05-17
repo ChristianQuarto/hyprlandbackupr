@@ -1,0 +1,27 @@
+{
+    "wallpaper": "/home/chris/.config/hypr/wallpapers/black-cat-sakura-bridge-pixel-moewalls-com.mp4",
+    "alpha": "100",
+    "special": {
+        "background": "#0A1428",
+        "foreground": "#dbc9dc",
+        "cursor": "#dbc9dc"
+    },
+    "colors": {
+        "color0": "#0A1428",
+        "color1": "#52689E",
+        "color2": "#956696",
+        "color3": "#6A89B9",
+        "color4": "#7398CF",
+        "color5": "#77A1D7",
+        "color6": "#9DA5D3",
+        "color7": "#dbc9dc",
+        "color8": "#998c9a",
+        "color9": "#52689E",
+        "color10": "#956696",
+        "color11": "#6A89B9",
+        "color12": "#7398CF",
+        "color13": "#77A1D7",
+        "color14": "#9DA5D3",
+        "color15": "#dbc9dc"
+    }
+}

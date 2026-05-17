@@ -1,0 +1,27 @@
+{
+    "wallpaper": "/home/chris/.config/hypr/wallpapers/night-city-pixel-moewalls-com.mp4",
+    "alpha": "100",
+    "special": {
+        "background": "#0E0F1B",
+        "foreground": "#a6abbc",
+        "cursor": "#a6abbc"
+    },
+    "colors": {
+        "color0": "#0E0F1B",
+        "color1": "#473B54",
+        "color2": "#37415D",
+        "color3": "#3C4764",
+        "color4": "#4A4459",
+        "color5": "#4A4C69",
+        "color6": "#69596E",
+        "color7": "#a6abbc",
+        "color8": "#747783",
+        "color9": "#473B54",
+        "color10": "#37415D",
+        "color11": "#3C4764",
+        "color12": "#4A4459",
+        "color13": "#4A4C69",
+        "color14": "#69596E",
+        "color15": "#a6abbc"
+    }
+}

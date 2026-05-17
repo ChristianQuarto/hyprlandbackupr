@@ -1,0 +1,27 @@
+{
+    "wallpaper": "/home/chris/.config/hypr/wallpapers/rain-in-the-heavy-traffic-pixel-moewalls-com.mp4",
+    "alpha": "100",
+    "special": {
+        "background": "#0A0A0F",
+        "foreground": "#e18e82",
+        "cursor": "#e18e82"
+    },
+    "colors": {
+        "color0": "#0A0A0F",
+        "color1": "#403B40",
+        "color2": "#463D42",
+        "color3": "#6D3D43",
+        "color4": "#53484C",
+        "color5": "#675F61",
+        "color6": "#91170D",
+        "color7": "#e18e82",
+        "color8": "#9d635b",
+        "color9": "#403B40",
+        "color10": "#463D42",
+        "color11": "#6D3D43",
+        "color12": "#53484C",
+        "color13": "#675F61",
+        "color14": "#91170D",
+        "color15": "#e18e82"
+    }
+}

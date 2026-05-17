@@ -1,0 +1,27 @@
+{
+    "wallpaper": "/home/chris/.config/hypr/wallpapers/yellowstone-pixel-moewalls-com.mp4",
+    "alpha": "100",
+    "special": {
+        "background": "#0f171b",
+        "foreground": "#e4aebf",
+        "cursor": "#e4aebf"
+    },
+    "colors": {
+        "color0": "#0f171b",
+        "color1": "#E56E6E",
+        "color2": "#F4A170",
+        "color3": "#494E97",
+        "color4": "#6E4990",
+        "color5": "#4B65AF",
+        "color6": "#934F91",
+        "color7": "#e4aebf",
+        "color8": "#9f7985",
+        "color9": "#E56E6E",
+        "color10": "#F4A170",
+        "color11": "#494E97",
+        "color12": "#6E4990",
+        "color13": "#4B65AF",
+        "color14": "#934F91",
+        "color15": "#e4aebf"
+    }
+}

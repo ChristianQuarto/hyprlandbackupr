@@ -1,0 +1,27 @@
+{
+    "wallpaper": "/home/chris/.config/hypr/wallpapers/lofi-girl-reading-book-while-its-raining-outside-pixel-moewalls-com.mp4",
+    "alpha": "100",
+    "special": {
+        "background": "#0D070C",
+        "foreground": "#a1b1c4",
+        "cursor": "#a1b1c4"
+    },
+    "colors": {
+        "color0": "#0D070C",
+        "color1": "#67454C",
+        "color2": "#9D4232",
+        "color3": "#A26059",
+        "color4": "#CF6853",
+        "color5": "#AD896E",
+        "color6": "#D48972",
+        "color7": "#a1b1c4",
+        "color8": "#707b89",
+        "color9": "#67454C",
+        "color10": "#9D4232",
+        "color11": "#A26059",
+        "color12": "#CF6853",
+        "color13": "#AD896E",
+        "color14": "#D48972",
+        "color15": "#a1b1c4"
+    }
+}

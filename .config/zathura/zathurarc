@@ -1,0 +1,7 @@
+# Zathura configuration with pywal colors
+# This file will be generated from template
+set recolor true
+set adjust-open "best"
+set guioptions none
+map j feedkeys "<C-Down>"
+map k feedkeys "<C-Up>"

@@ -1,0 +1,2 @@
+#!/usr/bin/env bash
+wpg -nrs '/home/chris/.config/hypr/wallpapers/a-quiet-night-in-a-rainy-pixel-city-moewalls-com.mp4' '/home/chris/.config/hypr/wallpapers/a-quiet-night-in-a-rainy-pixel-city-moewalls-com.mp4'

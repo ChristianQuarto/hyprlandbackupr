@@ -1,0 +1,27 @@
+{
+    "wallpaper": "/home/chris/.config/hypr/wallpapers/ryu-vs-ken-street-fighter-iii-3rd-strike-moewalls-com.mp4",
+    "alpha": "100",
+    "special": {
+        "background": "#141610",
+        "foreground": "#d5d7c4",
+        "cursor": "#d5d7c4"
+    },
+    "colors": {
+        "color0": "#141610",
+        "color1": "#546753",
+        "color2": "#68705F",
+        "color3": "#926C50",
+        "color4": "#77866E",
+        "color5": "#97956D",
+        "color6": "#CEB574",
+        "color7": "#d5d7c4",
+        "color8": "#959689",
+        "color9": "#546753",
+        "color10": "#68705F",
+        "color11": "#926C50",
+        "color12": "#77866E",
+        "color13": "#97956D",
+        "color14": "#CEB574",
+        "color15": "#d5d7c4"
+    }
+}

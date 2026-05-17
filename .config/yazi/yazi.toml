@@ -1,0 +1,21 @@
+# ~/.config/yazi/yazi.toml
+
+[opener]
+zathura = [
+    {run = 'zathura "$@" &> /dev/null & disown',  desc = "Apri con Zathura", for = "unix" }
+]
+
+[open]
+rules = [
+    # PDF files
+    { mime = "application/pdf", use = "zathura" },
+    # Altri formati supportati da Zathura
+    { mime = "application/postscript", use = "zathura" },  # PS files
+    { mime = "image/vnd.djvu", use = "zathura" },         # DJVU files
+    # Per estensione (alternativa)
+    { name = "*.pdf", use = "zathura" },
+    { name = "*.djvu", use = "zathura" },
+    { name = "*.ps", use = "zathura" },
+    { name = "*.cbz", use = "zathura" },  # Fumetti in CBZ
+    { name = "*.cbr", use = "zathura" }   # Fumetti in CBR
+]

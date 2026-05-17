@@ -1,0 +1,27 @@
+{
+    "wallpaper": "/home/chris/.config/hypr/wallpapers/itachi-crows-genjutsu-pixel-moewalls-com.mp4",
+    "alpha": "100",
+    "special": {
+        "background": "#190a10",
+        "foreground": "#ee94a9",
+        "cursor": "#ee94a9"
+    },
+    "colors": {
+        "color0": "#190a10",
+        "color1": "#734A5B",
+        "color2": "#961F49",
+        "color3": "#8C2F4C",
+        "color4": "#B22B50",
+        "color5": "#AA3555",
+        "color6": "#DA2F59",
+        "color7": "#ee94a9",
+        "color8": "#a66776",
+        "color9": "#734A5B",
+        "color10": "#961F49",
+        "color11": "#8C2F4C",
+        "color12": "#B22B50",
+        "color13": "#AA3555",
+        "color14": "#DA2F59",
+        "color15": "#ee94a9"
+    }
+}

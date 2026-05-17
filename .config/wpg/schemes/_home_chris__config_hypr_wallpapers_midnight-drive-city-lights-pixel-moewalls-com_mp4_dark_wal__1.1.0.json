@@ -1,0 +1,27 @@
+{
+    "wallpaper": "/home/chris/.config/hypr/wallpapers/midnight-drive-city-lights-pixel-moewalls-com.mp4",
+    "alpha": "100",
+    "special": {
+        "background": "#0A0D12",
+        "foreground": "#dfcbaa",
+        "cursor": "#dfcbaa"
+    },
+    "colors": {
+        "color0": "#0A0D12",
+        "color1": "#6E5537",
+        "color2": "#2E3840",
+        "color3": "#66594C",
+        "color4": "#A73B20",
+        "color5": "#906A4E",
+        "color6": "#7C8467",
+        "color7": "#dfcbaa",
+        "color8": "#9c8e76",
+        "color9": "#6E5537",
+        "color10": "#2E3840",
+        "color11": "#66594C",
+        "color12": "#A73B20",
+        "color13": "#906A4E",
+        "color14": "#7C8467",
+        "color15": "#dfcbaa"
+    }
+}

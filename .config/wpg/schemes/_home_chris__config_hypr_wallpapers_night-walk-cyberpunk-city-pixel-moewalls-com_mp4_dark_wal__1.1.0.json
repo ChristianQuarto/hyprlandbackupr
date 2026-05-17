@@ -1,0 +1,27 @@
+{
+    "wallpaper": "/home/chris/.config/hypr/wallpapers/night-walk-cyberpunk-city-pixel-moewalls-com.mp4",
+    "alpha": "100",
+    "special": {
+        "background": "#0E0D15",
+        "foreground": "#9bd0d8",
+        "cursor": "#9bd0d8"
+    },
+    "colors": {
+        "color0": "#0E0D15",
+        "color1": "#564942",
+        "color2": "#9D5946",
+        "color3": "#47A449",
+        "color4": "#C7A94F",
+        "color5": "#4057A4",
+        "color6": "#C55F9E",
+        "color7": "#9bd0d8",
+        "color8": "#6c9197",
+        "color9": "#564942",
+        "color10": "#9D5946",
+        "color11": "#47A449",
+        "color12": "#C7A94F",
+        "color13": "#4057A4",
+        "color14": "#C55F9E",
+        "color15": "#9bd0d8"
+    }
+}

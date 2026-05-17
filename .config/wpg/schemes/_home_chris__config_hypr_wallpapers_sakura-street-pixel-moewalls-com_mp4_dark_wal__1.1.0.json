@@ -1,0 +1,27 @@
+{
+    "wallpaper": "/home/chris/.config/hypr/wallpapers/sakura-street-pixel-moewalls-com.mp4",
+    "alpha": "100",
+    "special": {
+        "background": "#0a0a09",
+        "foreground": "#eae2eb",
+        "cursor": "#eae2eb"
+    },
+    "colors": {
+        "color0": "#0a0a09",
+        "color1": "#6288B2",
+        "color2": "#5999F7",
+        "color3": "#71ABF3",
+        "color4": "#A59CAB",
+        "color5": "#DD98AD",
+        "color6": "#BBBCD9",
+        "color7": "#eae2eb",
+        "color8": "#a39ea4",
+        "color9": "#6288B2",
+        "color10": "#5999F7",
+        "color11": "#71ABF3",
+        "color12": "#A59CAB",
+        "color13": "#DD98AD",
+        "color14": "#BBBCD9",
+        "color15": "#eae2eb"
+    }
+}

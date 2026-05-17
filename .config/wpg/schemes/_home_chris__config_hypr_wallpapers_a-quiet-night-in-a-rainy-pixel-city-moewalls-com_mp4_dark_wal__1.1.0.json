@@ -1,0 +1,27 @@
+{
+    "wallpaper": "/home/chris/.config/hypr/wallpapers/a-quiet-night-in-a-rainy-pixel-city-moewalls-com.mp4",
+    "alpha": "100",
+    "special": {
+        "background": "#0B0814",
+        "foreground": "#92dbca",
+        "cursor": "#92dbca"
+    },
+    "colors": {
+        "color0": "#0B0814",
+        "color1": "#2D304A",
+        "color2": "#1B4B50",
+        "color3": "#564B51",
+        "color4": "#AD3342",
+        "color5": "#968272",
+        "color6": "#28668D",
+        "color7": "#92dbca",
+        "color8": "#66998d",
+        "color9": "#2D304A",
+        "color10": "#1B4B50",
+        "color11": "#564B51",
+        "color12": "#AD3342",
+        "color13": "#968272",
+        "color14": "#28668D",
+        "color15": "#92dbca"
+    }
+}

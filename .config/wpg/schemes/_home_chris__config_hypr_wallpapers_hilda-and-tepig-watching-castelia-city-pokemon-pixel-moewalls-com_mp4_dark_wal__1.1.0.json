@@ -1,0 +1,27 @@
+{
+    "wallpaper": "/home/chris/.config/hypr/wallpapers/hilda-and-tepig-watching-castelia-city-pokemon-pixel-moewalls-com.mp4",
+    "alpha": "100",
+    "special": {
+        "background": "#1f0f21",
+        "foreground": "#cd9ccd",
+        "cursor": "#cd9ccd"
+    },
+    "colors": {
+        "color0": "#1f0f21",
+        "color1": "#522A94",
+        "color2": "#4C399E",
+        "color3": "#5C32A3",
+        "color4": "#633AB9",
+        "color5": "#7249C3",
+        "color6": "#B8449B",
+        "color7": "#cd9ccd",
+        "color8": "#8f6d8f",
+        "color9": "#522A94",
+        "color10": "#4C399E",
+        "color11": "#5C32A3",
+        "color12": "#633AB9",
+        "color13": "#7249C3",
+        "color14": "#B8449B",
+        "color15": "#cd9ccd"
+    }
+}

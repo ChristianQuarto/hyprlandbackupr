@@ -1,0 +1,27 @@
+{
+    "wallpaper": "/home/chris/.config/hypr/wallpapers/red-moon-rise-pixel-moewalls-com.mp4",
+    "alpha": "100",
+    "special": {
+        "background": "#1b1c12",
+        "foreground": "#b5c7ea",
+        "cursor": "#b5c7ea"
+    },
+    "colors": {
+        "color0": "#1b1c12",
+        "color1": "#606F98",
+        "color2": "#697EC0",
+        "color3": "#9A749A",
+        "color4": "#7086B6",
+        "color5": "#7697DD",
+        "color6": "#799AE2",
+        "color7": "#b5c7ea",
+        "color8": "#7e8ba3",
+        "color9": "#606F98",
+        "color10": "#697EC0",
+        "color11": "#9A749A",
+        "color12": "#7086B6",
+        "color13": "#7697DD",
+        "color14": "#799AE2",
+        "color15": "#b5c7ea"
+    }
+}

@@ -1,0 +1,27 @@
+{
+    "wallpaper": "/home/chris/.config/hypr/wallpapers/pixel-girl-smoking-night-city-cyberpunk-moewalls-com.mp4",
+    "alpha": "100",
+    "special": {
+        "background": "#0D0932",
+        "foreground": "#a7bfe2",
+        "cursor": "#a7bfe2"
+    },
+    "colors": {
+        "color0": "#0D0932",
+        "color1": "#2B2D90",
+        "color2": "#5B3494",
+        "color3": "#365197",
+        "color4": "#595BA2",
+        "color5": "#546BD2",
+        "color6": "#9F5EA1",
+        "color7": "#a7bfe2",
+        "color8": "#74859e",
+        "color9": "#2B2D90",
+        "color10": "#5B3494",
+        "color11": "#365197",
+        "color12": "#595BA2",
+        "color13": "#546BD2",
+        "color14": "#9F5EA1",
+        "color15": "#a7bfe2"
+    }
+}

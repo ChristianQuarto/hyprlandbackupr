@@ -1,0 +1,27 @@
+{
+    "wallpaper": "/home/chris/.config/hypr/wallpapers/childhood-gaming-street-fighter-iv-arcade-moewalls-com.mp4",
+    "alpha": "100",
+    "special": {
+        "background": "#151016",
+        "foreground": "#acbbce",
+        "cursor": "#acbbce"
+    },
+    "colors": {
+        "color0": "#151016",
+        "color1": "#922E25",
+        "color2": "#925632",
+        "color3": "#D0403C",
+        "color4": "#966553",
+        "color5": "#C29961",
+        "color6": "#435F96",
+        "color7": "#acbbce",
+        "color8": "#788290",
+        "color9": "#922E25",
+        "color10": "#925632",
+        "color11": "#D0403C",
+        "color12": "#966553",
+        "color13": "#C29961",
+        "color14": "#435F96",
+        "color15": "#acbbce"
+    }
+}

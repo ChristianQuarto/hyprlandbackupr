@@ -1,0 +1,27 @@
+{
+    "wallpaper": "/home/chris/.config/hypr/wallpapers/autumn-rain-pixel-moewalls-com.mp4",
+    "alpha": "100",
+    "special": {
+        "background": "#150f09",
+        "foreground": "#cbcfba",
+        "cursor": "#cbcfba"
+    },
+    "colors": {
+        "color0": "#150f09",
+        "color1": "#5E7053",
+        "color2": "#876335",
+        "color3": "#9A6D48",
+        "color4": "#778866",
+        "color5": "#A78F61",
+        "color6": "#C99F67",
+        "color7": "#cbcfba",
+        "color8": "#8e9082",
+        "color9": "#5E7053",
+        "color10": "#876335",
+        "color11": "#9A6D48",
+        "color12": "#778866",
+        "color13": "#A78F61",
+        "color14": "#C99F67",
+        "color15": "#cbcfba"
+    }
+}

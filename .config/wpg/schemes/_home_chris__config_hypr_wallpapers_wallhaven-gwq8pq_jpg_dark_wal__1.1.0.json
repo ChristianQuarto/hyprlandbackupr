@@ -1,0 +1,27 @@
+{
+    "wallpaper": "/home/chris/.config/hypr/wallpapers/wallhaven-gwq8pq.jpg",
+    "alpha": "100",
+    "special": {
+        "background": "#020204",
+        "foreground": "#b2b2ba",
+        "cursor": "#b2b2ba"
+    },
+    "colors": {
+        "color0": "#020204",
+        "color1": "#423E46",
+        "color2": "#4B4953",
+        "color3": "#63616E",
+        "color4": "#A00E11",
+        "color5": "#E81310",
+        "color6": "#E85A33",
+        "color7": "#b2b2ba",
+        "color8": "#7c7c82",
+        "color9": "#423E46",
+        "color10": "#4B4953",
+        "color11": "#63616E",
+        "color12": "#A00E11",
+        "color13": "#E81310",
+        "color14": "#E85A33",
+        "color15": "#b2b2ba"
+    }
+}

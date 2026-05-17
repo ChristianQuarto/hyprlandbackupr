@@ -1,0 +1,27 @@
+{
+    "wallpaper": "/home/chris/.config/hypr/wallpapers/lonely-homer-starry-night-sky-pixel-moewalls-com.mp4",
+    "alpha": "100",
+    "special": {
+        "background": "#020F19",
+        "foreground": "#8fcbe3",
+        "cursor": "#8fcbe3"
+    },
+    "colors": {
+        "color0": "#020F19",
+        "color1": "#354E4E",
+        "color2": "#A0660D",
+        "color3": "#89925B",
+        "color4": "#0E3D93",
+        "color5": "#175B8C",
+        "color6": "#7A7889",
+        "color7": "#8fcbe3",
+        "color8": "#648e9e",
+        "color9": "#354E4E",
+        "color10": "#A0660D",
+        "color11": "#89925B",
+        "color12": "#0E3D93",
+        "color13": "#175B8C",
+        "color14": "#7A7889",
+        "color15": "#8fcbe3"
+    }
+}

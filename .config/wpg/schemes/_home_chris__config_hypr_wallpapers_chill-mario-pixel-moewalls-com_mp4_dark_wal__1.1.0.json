@@ -1,0 +1,27 @@
+{
+    "wallpaper": "/home/chris/.config/hypr/wallpapers/chill-mario-pixel-moewalls-com.mp4",
+    "alpha": "100",
+    "special": {
+        "background": "#030434",
+        "foreground": "#e9c8c8",
+        "cursor": "#e9c8c8"
+    },
+    "colors": {
+        "color0": "#030434",
+        "color1": "#E6986C",
+        "color2": "#35489D",
+        "color3": "#2F50AE",
+        "color4": "#4666C6",
+        "color5": "#D76C91",
+        "color6": "#3AB090",
+        "color7": "#e9c8c8",
+        "color8": "#a38c8c",
+        "color9": "#E6986C",
+        "color10": "#35489D",
+        "color11": "#2F50AE",
+        "color12": "#4666C6",
+        "color13": "#D76C91",
+        "color14": "#3AB090",
+        "color15": "#e9c8c8"
+    }
+}
