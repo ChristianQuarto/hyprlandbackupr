@@ -1,0 +1,5 @@
+python-pywalfox 2.7.4-1
+quickshell-git 0.3.0.r3.g7d1c9a9-1
+swaync-widgets-git r27.895f5b9-1
+wpgtk 6.7.1-6
+zathura-pywal-git r27.5ba976a-1
