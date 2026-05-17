@@ -1,0 +1,116 @@
+#!/usr/bin/env bash
+
+theme="$HOME/.config/rofi/mediaplayer/mediaplayer.rasi"
+CACHE_DIR="$HOME/.cache/rofi-mediaplayer"
+mkdir -p "$CACHE_DIR"
+
+# ── Metadati ─────────────────────────────────────────────────────────
+get_meta() {
+    PLAYER=$(playerctl --list-all 2>/dev/null | head -1)
+    [[ -z "$PLAYER" ]] && echo "none" && return
+
+    TITLE=$(playerctl -p "$PLAYER" metadata --format '{{xesam:title}}' 2>/dev/null)
+    ARTIST=$(playerctl -p "$PLAYER" metadata --format '{{xesam:artist}}' 2>/dev/null)
+    ALBUM=$(playerctl -p "$PLAYER" metadata --format '{{xesam:album}}' 2>/dev/null)
+    ART_URL=$(playerctl -p "$PLAYER" metadata --format '{{mpris:artUrl}}' 2>/dev/null)
+    STATUS=$(playerctl -p "$PLAYER" status 2>/dev/null)
+}
+
+# ── Copertina ─────────────────────────────────────────────────────────
+get_cover() {
+    COVER="$CACHE_DIR/cover.png"
+
+    if [[ "$ART_URL" == file://* ]]; then
+        local path="${ART_URL#file://}"
+        convert "$path" -resize 200x200^ -gravity Center -extent 200x200 "$COVER" 2>/dev/null
+    elif [[ "$ART_URL" == http* ]]; then
+        curl -s "$ART_URL" -o "$CACHE_DIR/cover_raw.jpg" 2>/dev/null
+        convert "$CACHE_DIR/cover_raw.jpg" -resize 200x200^ -gravity Center -extent 200x200 "$COVER" 2>/dev/null
+    else
+        # Fallback icona musicale
+        convert -size 200x200 xc:'#1e1e2e' \
+            -fill '#cba6f7' -font "JetBrainsMono-Nerd-Font" \
+            -pointsize 80 -gravity center -annotate 0 '󰎁' \
+            "$COVER" 2>/dev/null
+    fi
+
+    echo "$COVER"
+}
+
+# ── Menu principale ───────────────────────────────────────────────────
+show_menu() {
+    get_meta
+
+    if [[ "$PLAYER" == "none" ]]; then
+        rofi -e "󰝛 Nessun player attivo" -theme "$theme"
+        return
+    fi
+
+    # Icona status
+    [[ "$STATUS" == "Playing" ]] && status_icon="" || status_icon="▶"
+
+    # Album o singolo
+    if [[ -n "$ALBUM" ]]; then
+        album_line="󰀥  $ALBUM"
+ #   else
+        #album_line="  Singolo"
+    fi
+
+    COVER=$(get_cover)
+
+    option_0="󰒮"
+    option_1="$status_icon"
+    option_2=""
+    option_3="󰒭"
+    option_4="󰍰"
+
+    mesg="$TITLE $ARTIST $album_line"
+
+    chosen=$(echo -e "$option_0\n$option_1\n$option_2\n$option_3\n$option_4" | \
+        rofi \
+            -dmenu \
+            -p "" \
+            -mesg "$mesg" \
+            -theme "$theme" \
+            -theme-str "listview {lines: 5;}" \
+            -theme-str "element-icon {size: 0;}")
+
+    case "$chosen" in
+        "$option_0") playerctl -p "$PLAYER" previous ; show_menu ;;
+        "$option_1") playerctl -p "$PLAYER" play-pause ; show_menu ;;
+        "$option_2") playerctl -p "$PLAYER" stop ;;
+        "$option_3") playerctl -p "$PLAYER" next ; show_menu ;;
+        "$option_4") show_lyrics ;;
+    esac
+}
+
+# ── Lyrics ────────────────────────────────────────────────────────────
+show_lyrics() {
+    get_meta
+
+    # Cerca lyrics con klyrics o script custom
+    LYRICS=""
+
+    if command -v klyrics &>/dev/null; then
+        LYRICS=$(klyrics "$ARTIST" "$TITLE" 2>/dev/null)
+    fi
+
+    # Fallback: apri genius nel browser
+    if [[ -z "$LYRICS" ]]; then
+        QUERY=$(echo "$ARTIST $TITLE" | sed 's/ /+/g')
+        xdg-open "https://genius.com/search?q=$QUERY" &
+        show_menu
+        return
+    fi
+
+    echo "$LYRICS" | rofi \
+        -dmenu \
+        -p "Lyrics" \
+        -mesg "$TITLE — $ARTIST" \
+        -theme "$theme" \
+        -theme-str "listview {lines: 15;}"
+
+    show_menu
+}
+
+show_menu
