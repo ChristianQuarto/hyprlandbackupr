@@ -1,0 +1,1 @@
+questa cartella contiene diversi stili di rofi (launcher,powermenu,bluetooth,wifi ecc)

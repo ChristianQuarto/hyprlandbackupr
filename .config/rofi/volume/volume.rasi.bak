@@ -1,0 +1,139 @@
+configuration {
+    show-icons: false;
+}
+
+@import "~/.config/rofi/colors/shared.rasi"
+
+/*
+USE_ICON=NO
+*/
+
+window {
+    transparency:     "real";
+    location:         NorthEast;
+    anchor:           NorthEast;
+    fullscreen:       false;
+    width:            300px;
+    height:           300px;
+    x-offset:         0px;
+    y-offset:         -3px;
+    margin:           0px;
+    padding:          0px;
+    border:           2px solid;
+    border-radius:    35px;
+    border-color:     @selected;
+    cursor:           "default";
+    background-color: @background;
+}
+
+mainbox {
+    enabled:          true;
+    spacing:          10px;
+    margin:           0px;
+    padding:          20px;
+    background-color: transparent;
+    children:         [ "inputbar", "message", "listview" ];
+}
+
+inputbar {
+    enabled:          true;
+    spacing:          10px;
+    padding:          0px;
+    background-color: transparent;
+    text-color:       @foreground;
+    children:         [ "textbox-prompt-colon", "prompt" ];
+}
+
+textbox-prompt-colon {
+    enabled:          true;
+    expand:           false;
+    str:              "󰕾";
+    padding:          10px 13px;
+    border-radius:    12px;
+    background-color: @urgent;
+    text-color:       @background;
+}
+
+prompt {
+    enabled:          true;
+    padding:          10px;
+    border-radius:    12px;
+    background-color: @active;
+    text-color:       @background;
+}
+
+message {
+    enabled:          true;
+    padding:          5px;
+    border-radius:    12px;
+    background-color: @background-alt;
+    text-color:       @foreground;
+}
+
+textbox {
+    background-color: inherit;
+    text-color:       inherit;
+    vertical-align:   0.5;
+    horizontal-align: 0.5;
+}
+
+listview {
+    enabled:          true;
+    columns:          1;
+    lines:            5;
+    cycle:            true;
+    scrollbar:        false;
+    dynamic:          true;
+    layout:           vertical;
+    fixed-height:     true;
+    spacing:          5px;
+    background-color: transparent;
+    cursor:           "default";
+}
+scrollbar {
+    handle-width:                5px ;
+    handle-color:                @selected;
+    border-radius:               0px;
+    background-color:            @background-alt;
+}
+element {
+    enabled:          true;
+    padding:          10px;
+    border-radius:    12px;
+    background-color: transparent;
+    text-color:       @foreground;
+    cursor:           pointer;
+}
+
+element-text {
+    background-color: transparent;
+    text-color:       inherit;
+    cursor:           inherit;
+    vertical-align:   0.5;
+    horizontal-align: 0.0;
+}
+
+element normal.normal,
+element alternate.normal {
+    background-color: transparent;
+    text-color:       @foreground;
+}
+
+element normal.urgent,
+element alternate.urgent,
+element selected.active {
+    background-color: @urgent;
+    text-color:       @background;
+}
+
+element normal.active,
+element alternate.active,
+element selected.urgent {
+    background-color: @active;
+    text-color:       @background;
+}
+
+element selected.normal {
+    background-color: @selected;
+    text-color:       @background;
+}

@@ -1,0 +1,99 @@
+configuration {
+    show-icons: false;
+}
+
+@import "~/.config/rofi/colors/shared.rasi"
+@import "~/.config/rofi/font.rasi"
+window {
+    transparency:     "screenshot";
+    location:         north;
+    anchor:           north;
+    fullscreen:       false;
+    width:            300px;
+    x-offset:         0px;
+    y-offset:         8px;
+    border:           2px solid;
+    border-radius:    32px;
+    border-color:     @selected;
+    background-color: rgba(10,8,20,0.85);
+}
+
+mainbox {
+    spacing:          8px;
+    padding:          12px;
+    background-color: transparent;
+    children:         [ "inputbar", "listview" ];
+}
+
+inputbar {
+    spacing:          8px;
+    padding:          8px 12px;
+    border-radius:    8px;
+    border:           1px solid;
+    border-color:     @selected;
+    background-color: rgba(255,255,255,0.04);
+    children:         [ "textbox-prompt-colon", "prompt" ];
+}
+
+textbox-prompt-colon {
+    expand:           false;
+    str:              "";
+    padding:          2px 8px 2px 0px;
+    background-color: transparent;
+    text-color:       @selected;
+}
+
+prompt {
+    padding:          2px 0px;
+    background-color: transparent;
+    text-color:       @foreground;
+}
+
+listview {
+    columns:          1;
+    lines:            5;
+    cycle:            true;
+    scrollbar:        false;
+    dynamic:          true;
+    fixed-height:     true;
+    spacing:          4px;
+    background-color: transparent;
+}
+
+element {
+    padding:          9px 10px;
+    border-radius:    8px;
+    background-color: transparent;
+    text-color:       @foreground;
+    cursor:           pointer;
+}
+
+element-text {
+    background-color: transparent;
+    text-color:       inherit;
+    vertical-align:   0.5;
+    horizontal-align: 0.0;
+}
+
+element normal.normal,
+element alternate.normal {
+    background-color: transparent;
+    text-color:       @foreground;
+}
+
+element selected.normal {
+    background-color: @selected;
+    text-color:       @background;
+}
+
+element normal.urgent,
+element alternate.urgent {
+    background-color: @urgent;
+    text-color:       @background;
+}
+
+element normal.active,
+element alternate.active {
+    background-color: @active;
+    text-color:       @background;
+}

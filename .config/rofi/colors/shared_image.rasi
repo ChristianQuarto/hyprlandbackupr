@@ -1,0 +1,7 @@
+imagebox {
+    padding: 20px;
+    background-color: transparent;
+    background-image: url("/tmp/wallpaper_frame.png", height);
+    orientation: vertical;
+    children: [ "inputbar", "dummy", "mode-switcher" ];
+}

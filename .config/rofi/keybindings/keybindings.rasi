@@ -1,0 +1,114 @@
+configuration {
+    show-icons: false;
+}
+
+@import "~/.config/rofi/colors/shared.rasi"
+@import "~/.config/rofi/font.rasi"
+window {
+    transparency:     "screenshot";
+    location:         center;
+    anchor:           center;
+    fullscreen:       false;
+    width:            820px;
+    border:           2px solid;
+    border-radius:    32px;
+    border-color:     @selected;
+    background-color: rgba(10,8,20,0.85);
+}
+
+mainbox {
+    spacing:          10px;
+    padding:          16px;
+    background-color: transparent;
+    children:         [ "inputbar", "message", "listview" ];
+}
+
+inputbar {
+    spacing:          8px;
+    padding:          10px 14px;
+    border-radius:    6px;
+    border:           1px solid;
+    border-color:     @selected;
+    background-color: rgba(255,255,255,0.03);
+    children:         [ "textbox-prompt-colon", "entry" ];
+}
+
+textbox-prompt-colon {
+    expand:           false;
+    str:              "";
+    padding:          0px 8px 0px 0px;
+    background-color: transparent;
+    text-color:       @selected;
+}
+
+entry {
+    padding:          0px;
+    background-color: transparent;
+    text-color:       @foreground;
+    placeholder:      "cerca keybinding...";
+    placeholder-color: @background-alt;
+}
+
+message {
+    padding:          6px 14px;
+    border-radius:    6px;
+    background-color: rgba(255,255,255,0.04);
+    text-color:       @selected;
+}
+
+textbox {
+    background-color: transparent;
+    text-color:       @background-alt;
+    horizontal-align: 0.0;
+}
+
+listview {
+    columns:          1;
+    lines:            20;
+    cycle:            false;
+    scrollbar:        true;
+    fixed-height:     true;
+    spacing:          1px;
+    background-color: transparent;
+}
+
+scrollbar {
+    handle-width:     2px;
+    handle-color:     @selected;
+    border-radius:    4px;
+    background-color: rgba(255,255,255,0.05);
+}
+
+element {
+    padding:          6px 14px;
+    border-radius:    4px;
+    background-color: transparent;
+    cursor:           pointer;
+    border:           0px 0px 0px 3px solid;
+    border-color:     transparent;
+}
+
+element-text {
+    background-color: transparent;
+    text-color:       @foreground;
+    horizontal-align: 0.0;
+    vertical-align:   0.5;
+}
+
+element normal.normal {
+    background-color: transparent;
+    border-color:     transparent;
+}
+
+element alternate.normal {
+    background-color: rgba(255,255,255,0.02);
+    border-color:     transparent;
+}
+
+element selected.normal {
+    background-color: rgba(255,255,255,0.06);
+    border-color:     @selected;
+}
+element-text {
+    markup: true;
+}
