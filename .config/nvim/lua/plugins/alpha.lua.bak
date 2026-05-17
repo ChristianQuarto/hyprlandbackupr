@@ -1,0 +1,67 @@
+-- ~/.config/nvim/lua/plugins/alpha.lua
+return {
+  "goolord/alpha-nvim",
+  dependencies = {
+    "nvim-tree/nvim-web-devicons",
+    "nvim-lua/plenary.nvim",
+  },
+  event = "VimEnter",
+  config = function()
+    local alpha = require("alpha")
+    local dashboard = require("alpha.themes.dashboard")
+
+    -- Disabilita temporaneamente LazyVim snacks picker se presente
+    local lazyvim_installed, _ = pcall(require, "lazyvim.util")
+    if lazyvim_installed then
+      -- Non fare nulla, LazyVim gestirà alpha a modo suo
+      return
+    end
+
+    -- Header (usando il tuo ASCII art)
+    dashboard.section.header.val = {
+      "    ⣴⣶⣤⡤⠦⣤⣀⣤⠆     ⣈⣭⣿⣶⣿⣦⣼⣆          ",
+      "     ⠉⠻⢿⣿⠿⣿⣿⣶⣦⠤⠄⡠⢾⣿⣿⡿⠋⠉⠉⠻⣿⣿⡛⣦       ",
+      "           ⠈⢿⣿⣟⠦ ⣾⣿⣿⣷    ⠻⠿⢿⣿⣧⣄     ",
+      "            ⣸⣿⣿⢧ ⢻⠻⣿⣿⣷⣄⣀⠄⠢⣀⡀⠈⠙⠿⠄    ",
+      "           ⢠⣿⣿⣿⠈    ⣻⣿⣿⣿⣿⣿⣿⣿⣛⣳⣤⣀⣀   ",
+      "    ⢠⣧⣶⣥⡤⢄ ⣸⣿⣿⠘  ⢀⣴⣿⣿⡿⠛⣿⣿⣧⠈⢿⠿⠟⠛⠻⠿⠄  ",
+      "   ⣰⣿⣿⠛⠻⣿⣿⡦⢹⣿⣷   ⢊⣿⣿⡏  ⢸⣿⣿⡇ ⢀⣠⣄⣾⠄   ",
+      "  ⣠⣿⠿⠛ ⢀⣿⣿⣷⠘⢿⣿⣦⡀ ⢸⢿⣿⣿⣄ ⣸⣿⣿⡇⣪⣿⡿⠿⣿⣷⡄  ",
+      " ⠙⠃   ⣼⣿⡟  ⠈⠻⣿⣿⣦⣌⡇⠠⣾⣿⣿⣷⣿⣿⣿⠛⢹⣿⣿⢻⣿⣷  ",
+      "      ⢻⣿⣿⣄   ⠈⠻⣿⣿⣿⣷⣿⣿⣿⣿⣿⡟ ⠈⣿⣿⡿⣿⣿⡇ ",
+      "       ⠻⣿⣿⣿⣿⣶⣤⣀⣀⣠⣿⣿⣿⣿⣿⣿⣿⣿⡇ ⢠⣿⣿⣿⣿⣿ ",
+      "        ⠈⠛⢿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⡇ ⢸⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣶⣤⡀",
+      "                ⠉⠻⢿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⡟⠛⢿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿",
+    }
+
+    -- Pulsanti
+    dashboard.section.buttons.val = {
+      dashboard.button("e", "  > Nuovo file", ":ene <BAR> startinsert<CR>"),
+      dashboard.button("f", "󰈞  > Trova file", ":Telescope find_files<CR>"),
+      dashboard.button("r", "  > File recenti", ":Telescope oldfiles<CR>"),
+      dashboard.button("g", "  > Live grep", ":Telescope live_grep<CR>"),
+      dashboard.button("c", "  > Configurazione", ":e ~/.config/nvim/init.lua<CR>"),
+      dashboard.button("q", "󰅚  > Esci", ":qa<CR>"),
+    }
+
+    -- Footer
+    dashboard.section.footer.val = "Welcome back, " .. (os.getenv("USER") or "user")
+
+    -- Configurazione alpha
+    alpha.setup(dashboard.config)
+
+    -- Nascondi statusline in alpha
+    vim.api.nvim_create_autocmd("User", {
+      pattern = "AlphaReady",
+      callback = function()
+        vim.opt.laststatus = 0
+        vim.api.nvim_create_autocmd("BufUnload", {
+          buffer = 0,
+          callback = function()
+            vim.opt.laststatus = 2
+          end,
+        })
+      end,
+    })
+  end,
+}

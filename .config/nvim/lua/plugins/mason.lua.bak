@@ -1,0 +1,181 @@
+-- ~/.config/nvim/lua/plugins/lsp.lua
+return {
+  -- Mason: gestione installer LSP
+  {
+    "mason-org/mason.nvim",
+    build = ":MasonUpdate",
+    opts = {},
+  },
+
+  -- Integrazione Mason con LSPconfig
+  {
+    "mason-org/mason-lspconfig.nvim",
+    dependencies = { "mason-org/mason.nvim" },
+    opts = {
+      ensure_installed = {
+        "lua_ls", -- Lua
+        "pyright", -- Python
+        "tsserver", -- TypeScript/JavaScript
+        "rust_analyzer", -- Rust
+        "elixirls", -- Elixir [citation:5]
+      },
+    },
+  },
+
+  -- LSP Config
+  {
+    "neovim/nvim-lspconfig",
+    dependencies = {
+      "mason-org/mason.nvim",
+      "mason-org/mason-lspconfig.nvim",
+      "hrsh7th/cmp-nvim-lsp", -- Capacità per completamento
+    },
+    config = function()
+      local lspconfig = require("lspconfig")
+      local capabilities = require("cmp_nvim_lsp").default_capabilities()
+
+      -- Diagnostica: configura icone [citation:2]
+      vim.diagnostic.config({
+        signs = {
+          text = {
+            [vim.diagnostic.severity.ERROR] = "",
+            [vim.diagnostic.severity.WARN] = "",
+            [vim.diagnostic.severity.INFO] = "",
+            [vim.diagnostic.severity.HINT] = "",
+          },
+        },
+        virtual_text = true,
+        update_in_insert = false,
+        float = {
+          source = true, -- Mostra fonte del diagnostico
+        },
+      })
+
+      -- Keymaps LSP [citation:8]
+      vim.api.nvim_create_autocmd("LspAttach", {
+        group = vim.api.nvim_create_augroup("UserLspConfig", {}),
+        callback = function(ev)
+          local opts = { buffer = ev.buf }
+          vim.keymap.set("n", "K", vim.lsp.buf.hover, opts)
+          vim.keymap.set("n", "gd", vim.lsp.buf.definition, opts)
+          vim.keymap.set("n", "gD", vim.lsp.buf.declaration, opts)
+          vim.keymap.set("n", "gi", vim.lsp.buf.implementation, opts)
+          vim.keymap.set("n", "gr", vim.lsp.buf.references, opts)
+          vim.keymap.set("n", "<leader>rn", vim.lsp.buf.rename, opts)
+          vim.keymap.set({ "n", "v" }, "<leader>ca", vim.lsp.buf.code_action, opts)
+        end,
+      })
+
+      -- Setup server predefinito
+      lspconfig.lua_ls.setup({
+        capabilities = capabilities,
+        settings = {
+          Lua = {
+            runtime = { version = "LuaJIT" },
+            diagnostics = { globals = { "vim" } },
+            workspace = {
+              library = vim.api.nvim_get_runtime_file("", true),
+            },
+          },
+        },
+      })
+
+      -- Configurazione per Elixir (esempio con percorso specifico) [citation:5]
+      -- lspconfig.elixirls.setup({
+      --     cmd = { "/path/to/elixir-ls/language_server.sh" },
+      --     capabilities = capabilities,
+      -- })
+    end,
+  },
+
+  -- Tiny Inline Diagnostics: messaggi diagnostici completi [citation:1]
+  {
+    "rachartier/tiny-inline-diagnostic.nvim",
+    event = "VeryLazy",
+    priority = 1000,
+    opts = {
+      add_messages = { display_count = true },
+      multilines = { enabled = true, always_show = true },
+      show_source = { enabled = true },
+    },
+  },
+
+  -- nvim-cmp: motore di completamento [citation:3][citation:5]
+  {
+    "hrsh7th/nvim-cmp",
+    event = "InsertEnter",
+    dependencies = {
+      "hrsh7th/cmp-nvim-lsp", -- Sorgente LSP
+      "hrsh7th/cmp-buffer", -- Sorgente buffer
+      "hrsh7th/cmp-path", -- Sorgente path
+      "hrsh7th/cmp-cmdline", -- Sorgente command line
+      "L3MON4D3/LuaSnip", -- Motore snippet
+      "saadparwaiz1/cmp_luasnip", -- Integrazione snippet
+      "rafamadriz/friendly-snippets", -- Raccolta snippet [citation:3]
+    },
+    config = function()
+      local cmp = require("cmp")
+      local luasnip = require("luasnip")
+
+      -- Carica snippets da friendly-snippets
+      require("luasnip.loaders.from_vscode").lazy_load()
+
+      cmp.setup({
+        snippet = {
+          expand = function(args)
+            luasnip.lsp_expand(args.body) -- Usa LuaSnip [citation:3]
+          end,
+        },
+        mapping = cmp.mapping.preset.insert({
+          ["<C-Space>"] = cmp.mapping.complete(),
+          ["<CR>"] = cmp.mapping.confirm({ select = true }), -- Conferma con Enter [citation:3]
+          ["<Tab>"] = cmp.mapping(function(fallback)
+            if cmp.visible() then
+              cmp.select_next_item()
+            elseif luasnip.expand_or_jumpable() then
+              luasnip.expand_or_jump()
+            else
+              fallback()
+            end
+          end, { "i", "s" }),
+          ["<S-Tab>"] = cmp.mapping(function(fallback)
+            if cmp.visible() then
+              cmp.select_prev_item()
+            elseif luasnip.jumpable(-1) then
+              luasnip.jump(-1)
+            else
+              fallback()
+            end
+          end, { "i", "s" }),
+        }),
+        sources = cmp.config.sources({
+          { name = "nvim_lsp" }, -- Da LSP
+          { name = "luasnip" }, -- Da snippet
+          { name = "buffer" }, -- Da buffer aperti
+          { name = "path" }, -- Da path file system
+        }),
+        formatting = {
+          format = function(entry, vim_item)
+            vim_item.menu = ({
+              nvim_lsp = "[LSP]",
+              luasnip = "[Snippet]",
+              buffer = "[Buffer]",
+              path = "[Path]",
+            })[entry.source.name]
+            return vim_item
+          end,
+        },
+      })
+
+      -- Completamento per command line
+      cmp.setup.cmdline(":", {
+        mapping = cmp.mapping.preset.cmdline(),
+        sources = cmp.config.sources({
+          { name = "path" },
+        }, {
+          { name = "cmdline" },
+        }),
+      })
+    end,
+  },
+}
