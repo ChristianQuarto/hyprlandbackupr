@@ -1,7 +1,6 @@
 import Quickshell
 import Quickshell.Io
 import QtQuick
-
 ShellRoot {
     FileView {
         id: walFile
@@ -25,19 +24,22 @@ ShellRoot {
             }
         }
     }
-
     IpcHandler {
         target: "reload"
         function colors(): void { walFile.reload() }
     }
-
     Variants {
         model: Quickshell.screens
         Bar { required property var modelData; screen: modelData }
     }
-
     Variants {
         model: Quickshell.screens
         ControlCenter { required property var modelData; screen: modelData }
     }
+  Variants {
+        model: Quickshell.screens
+        MediaPlayer { required property var modelData; screen: modelData }
+      }
+      
 }
+
