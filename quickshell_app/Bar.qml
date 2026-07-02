@@ -15,6 +15,7 @@ PanelWindow {
         var cols = [Colors.color6, Colors.color2, Colors.color3, Colors.color4, Colors.color5]
         return cols[idx] || Colors.color7
     }
+
     function batteryIcon(pct, charging) {
         if (charging) return "󰂄"
         if (pct >= 95) return "󰁹"
@@ -29,13 +30,28 @@ PanelWindow {
     property string mediaArtist: ""
     property bool   mediaPlaying: false
     property bool   hasPlayer:   false
-// ── Battery state ──────────────────────
+
+    // ── Battery state ──────────────────────
     property string battDev:      ""
     property bool   hasBattery:   false
     property int    battPct:      0
     property bool   battCharging: false
 
- Process {
+    Timer {
+        interval: 100; running: true; repeat: true
+        onTriggered: {
+            bar.hasPlayer = Mpris.players.values.length > 0
+            if (bar.hasPlayer) {
+                var p = Mpris.players.values[0]
+                bar.mediaTitle   = p.trackTitle  || "No title"
+                bar.mediaArtist  = p.trackArtist || ""
+                bar.mediaPlaying = p.playbackState === MprisPlaybackState.Playing
+            }
+        }
+    }
+
+    // Detect a battery once at startup (BAT0, BAT1, ...)
+    Process {
         command: ["bash", "-c", "ls /sys/class/power_supply/ 2>/dev/null | grep -m1 '^BAT'"]
         running: true
         stdout: SplitParser {
@@ -65,28 +81,6 @@ PanelWindow {
         repeat: true
         triggeredOnStart: true
         onTriggered: { battProc.running = false; battProc.running = true }
-    }
-
-
-
-
-
-
-
-
-
-
-    Timer {
-        interval: 100; running: true; repeat: true
-        onTriggered: {
-            bar.hasPlayer = Mpris.players.values.length > 0
-            if (bar.hasPlayer) {
-                var p = Mpris.players.values[0]
-                bar.mediaTitle   = p.trackTitle  || "No title"
-                bar.mediaArtist  = p.trackArtist || ""
-                bar.mediaPlaying = p.playbackState === MprisPlaybackState.Playing
-            }
-        }
     }
 
     Item {
@@ -161,13 +155,30 @@ PanelWindow {
                 border.color: Colors.color1
                 border.width: 2
 
+                MouseArea {
+                    // Area cliccabile di sfondo: apre il popup del player.
+                    // I bottoni sotto hanno una loro MouseArea e intercettano
+                    // il click prima che arrivi qui.
+                    anchors.fill: parent
+                    onClicked: Colors.playerOpen = !Colors.playerOpen
+                }
+
                 Row {
                     id: mediaCenterRow
                     anchors.centerIn: parent
                     spacing: 8
 
                     Text {
-                        text: bar.hasPlayer ? (bar.mediaPlaying ? "" : "") : "󰝛"
+                        text: ""
+                        color: Colors.color6
+                        font.pixelSize: 12
+                        font.family: "DepartureMono Nerd Font Mono"
+                        anchors.verticalCenter: parent.verticalCenter
+                        visible: bar.hasPlayer
+                        MouseArea { anchors.fill: parent; onClicked: if (bar.hasPlayer) Mpris.players.values[0].previous() }
+                    }
+                    Text {
+                        text: bar.hasPlayer ? (bar.mediaPlaying ? "" : "") : "󰝛"
                         color: bar.hasPlayer ? Colors.color6 : Colors.color6
                         font.pixelSize: 13
                         font.family: "DepartureMono Nerd Font Mono"
@@ -218,7 +229,9 @@ PanelWindow {
                     id: sysRow
                     anchors.centerIn: parent
                     spacing: 0
- Text {
+
+                    // ── Battery ──
+                    Text {
                         id: battIcon
                         text: bar.batteryIcon(bar.battPct, bar.battCharging)
                         color: (bar.battPct < 20 && !bar.battCharging) ? Colors.color3 : Colors.color4
@@ -238,6 +251,7 @@ PanelWindow {
                         anchors.verticalCenter: parent.verticalCenter
                         rightPadding: 8
                     }
+
                     Text {
                         id: btIcon
                         text: "󰂱"
@@ -347,7 +361,7 @@ PanelWindow {
                                 }
                             }
                             Text {
-                                text: ""
+                                text: ""
                                 color: Colors.color7
                                 font.pixelSize: 11
                                 font.family: "DepartureMono Nerd Font Mono"
@@ -379,3 +393,4 @@ PanelWindow {
         }
     }
 }
+
